@@ -15,10 +15,9 @@ This repository demonstrates how to perform an atomic-like Hedera Token Service 
 ## Installation
 
 ```bash
-git clone <repo-url>
-cd <repo-directory>
-npm install @hashgraph/sdk
-npm install dotenv
+git clone https://github.com/hedera-dev/hip-551-batch-transaction-demo.git
+cd hip-551-batch-transaction-demo
+npm install
 ```
 
 ## Configuration
@@ -39,7 +38,7 @@ node mintFractionalAsset.js
 The script will:
 
 1. Create three new test accounts with automatic token association.
-2. Create an NFT and a fungible token.
+2. Create an NFT, a fungible token, and a consensus topic.
 3. Perform a batch transaction that:
    - Mints the NFT.
    - Distributes shares.
