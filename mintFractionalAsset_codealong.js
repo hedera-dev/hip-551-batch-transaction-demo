@@ -101,10 +101,6 @@ async function main() {
     const topicReceipt = await topicResp.getReceipt(client);
     const topicId = topicReceipt.topicId;
     console.log(`Topic ID for allocation log: ${topicId}`);
-    const message =
-      `Allocated ${ALICE_SHARES}/${TOTAL_SHARES} to Alice, ` +
-      `${BOB_SHARES}/${TOTAL_SHARES} to Bob, ` +
-      `${CHARLIE_SHARES}/${TOTAL_SHARES} to Charlie`;
 
     // 4. Batch-mint NFT, distribute FT, and pause FT atomically
     console.log('Submitting batch HTS operations (mint NFT, distribute FT, pause FT)...');
@@ -121,6 +117,10 @@ async function main() {
     const pauseBatch = new TokenPauseTransaction()
       .setTokenId(ftTokenId)
 
+    const message =
+      `Allocated ${ALICE_SHARES}/${TOTAL_SHARES} to Alice, ` +
+      `${BOB_SHARES}/${TOTAL_SHARES} to Bob, ` +
+      `${CHARLIE_SHARES}/${TOTAL_SHARES} to Charlie`;
     const messageBatch = new TopicMessageSubmitTransaction()
       .setTopicId(topicId)
       .setMessage(message)
